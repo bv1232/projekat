@@ -57,6 +57,9 @@ public class Karta {
         this.klasa = klasa;
     }
 
+    public Karta(){
+        this.let = new Let();
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

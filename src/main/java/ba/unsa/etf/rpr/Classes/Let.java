@@ -66,7 +66,9 @@ public class Let {
         this.vrijemePolaska = vrijemePolaska;
         this.paviljon = paviljon;
     }
+    public Let(){
 
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
