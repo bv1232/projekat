@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.Classes;
 
 import java.util.Objects;
 
-public class Karta {
+public class Karta implements Idable{
  private int id;
  private Let let;
  private Putnik putnik;

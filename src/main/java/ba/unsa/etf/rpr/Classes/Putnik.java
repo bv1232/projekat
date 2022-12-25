@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.Classes;
 
 import java.util.Objects;
 
-public class Putnik {
+public class Putnik implements Idable{
     private int id;
     private String ime, prezime, mail;
 

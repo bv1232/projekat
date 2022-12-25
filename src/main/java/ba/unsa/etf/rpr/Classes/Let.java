@@ -3,7 +3,7 @@ import java.sql.Time;
 import java.util.Date;
 import java.util.Objects;
 
-public class Let {
+public class Let implements Idable{
     private int id;
     private String pocetnaDestinacija, krajnjaDestinacija;
     private Date datum;
