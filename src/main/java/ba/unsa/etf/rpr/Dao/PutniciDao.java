@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.Dao;
 
-public interface PutniciDao extends Dao {
+import ba.unsa.etf.rpr.Classes.Putnik;
+
+public interface PutniciDao extends Dao<Putnik> {
 }
