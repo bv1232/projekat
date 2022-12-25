@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.Dao;
 
-public interface KarteDao extends Dao {
+import ba.unsa.etf.rpr.Classes.Karta;
+
+public interface KarteDao extends Dao<Karta> {
 }
