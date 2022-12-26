@@ -8,7 +8,7 @@ public class Let implements Idable{
     private String pocetnaDestinacija, krajnjaDestinacija;
     private Date datum;
     private Time vrijemePolaska;
-    private String paviljon;
+    private String terminal;
 
     public void setId(int id) {
         this.id = id;
@@ -30,8 +30,8 @@ public class Let implements Idable{
         this.vrijemePolaska = vrijemePolaska;
     }
 
-    public void setPaviljon(String paviljon) {
-        this.paviljon = paviljon;
+    public void setTerminal(String terminal) {
+        this.terminal = terminal;
     }
 
     public int getId() {
@@ -54,17 +54,17 @@ public class Let implements Idable{
         return vrijemePolaska;
     }
 
-    public String getPaviljon() {
-        return paviljon;
+    public String getTerminal() {
+        return terminal;
     }
 
-    public Let(int id, String pocetnaDestinacija, String krajnjaDestinacija, Date datum, Time vrijemePolaska, String paviljon) {
+    public Let(int id, String pocetnaDestinacija, String krajnjaDestinacija, Date datum, Time vrijemePolaska, String terminal) {
         this.id = id;
         this.pocetnaDestinacija = pocetnaDestinacija;
         this.krajnjaDestinacija = krajnjaDestinacija;
         this.datum = datum;
         this.vrijemePolaska = vrijemePolaska;
-        this.paviljon = paviljon;
+        this.terminal = terminal;
     }
     public Let(){
 
@@ -74,12 +74,12 @@ public class Let implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Let let = (Let) o;
-        return id == let.id && Objects.equals(pocetnaDestinacija, let.pocetnaDestinacija) && Objects.equals(krajnjaDestinacija, let.krajnjaDestinacija) && Objects.equals(datum, let.datum) && Objects.equals(vrijemePolaska, let.vrijemePolaska) && Objects.equals(paviljon, let.paviljon);
+        return id == let.id && Objects.equals(pocetnaDestinacija, let.pocetnaDestinacija) && Objects.equals(krajnjaDestinacija, let.krajnjaDestinacija) && Objects.equals(datum, let.datum) && Objects.equals(vrijemePolaska, let.vrijemePolaska) && Objects.equals(terminal, let.terminal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, pocetnaDestinacija, krajnjaDestinacija, datum, vrijemePolaska, paviljon);
+        return Objects.hash(id, pocetnaDestinacija, krajnjaDestinacija, datum, vrijemePolaska, terminal);
     }
 
     @Override
@@ -90,7 +90,7 @@ public class Let implements Idable{
                 ", krajnjaDestinacija='" + krajnjaDestinacija + '\'' +
                 ", datum=" + datum +
                 ", vrijemePolaska=" + vrijemePolaska +
-                ", paviljon='" + paviljon + '\'' +
+                ", paviljon='" + terminal + '\'' +
                 '}';
     }
 }
