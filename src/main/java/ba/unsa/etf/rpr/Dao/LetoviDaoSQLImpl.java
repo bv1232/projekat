@@ -1,13 +1,9 @@
 package ba.unsa.etf.rpr.Dao;
 
-import ba.unsa.etf.rpr.Classes.Karta;
 import ba.unsa.etf.rpr.Classes.Let;
 
-import java.io.IOException;
 import java.sql.*;
-import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 import java.util.TreeMap;
 
 public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{

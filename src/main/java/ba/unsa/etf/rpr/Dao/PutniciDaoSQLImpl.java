@@ -1,11 +1,9 @@
 package ba.unsa.etf.rpr.Dao;
 
-import ba.unsa.etf.rpr.Classes.Let;
 import ba.unsa.etf.rpr.Classes.Putnik;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
