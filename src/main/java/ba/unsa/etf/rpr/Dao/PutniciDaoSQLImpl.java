@@ -1,30 +1,41 @@
 package ba.unsa.etf.rpr.Dao;
 
+import ba.unsa.etf.rpr.Classes.Let;
+import ba.unsa.etf.rpr.Classes.Putnik;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class PutniciDaoSQLImpl implements PutniciDao{
-    @Override
-    public Object getById(int id) {
-        return null;
+public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao{
+    public PutniciDaoSQLImpl() {
+        super("putnici");
     }
 
     @Override
-    public Object add(Object item) {
-        return null;
+    public Putnik row2object(ResultSet rs) throws Exception {
+        try {
+            Putnik putnik = new Putnik();
+            putnik.setId(rs.getInt("id"));
+            putnik.setIme(rs.getString("ime"));
+            putnik.setPrezime(rs.getString("prezime"));
+            putnik.setMail(rs.getString("mail"));
+            return putnik;
+        } catch (SQLException e) {
+            throw new Exception(e.getMessage(), e);
+        }
     }
 
     @Override
-    public Object update(Object item) {
-        return null;
+    public Map<String, Object> object2row(Putnik object) {
+        Map<String, Object> row = new TreeMap<>();
+        row.put("id", object.getId());
+        row.put("ime", object.getIme());
+        row.put("prezime", object.getPrezime());
+        row.put("mail", object.getMail());
+        return row;
     }
 
-    @Override
-    public void delete(int id) {
-
-    }
-
-    @Override
-    public List getAll() {
-        return null;
-    }
 }
