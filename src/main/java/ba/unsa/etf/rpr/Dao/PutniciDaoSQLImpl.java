@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.Dao;
 
-import ba.unsa.etf.rpr.Classes.Putnik;
+import ba.unsa.etf.rpr.Domain.Putnik;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
