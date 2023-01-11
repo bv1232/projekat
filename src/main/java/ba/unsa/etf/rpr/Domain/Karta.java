@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.Classes;
+package ba.unsa.etf.rpr.Domain;
 
 import java.util.Objects;
 
