@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.Dao;
 
-import ba.unsa.etf.rpr.Classes.Idable;
+import ba.unsa.etf.rpr.Domain.Idable;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
