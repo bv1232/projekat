@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.Dao;
 
 import ba.unsa.etf.rpr.Domain.Putnik;
+import ba.unsa.etf.rpr.Exception.KartaException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
     }
 
     @Override
-    public Putnik row2object(ResultSet rs) throws Exception {
+    public Putnik row2object(ResultSet rs) throws KartaException {
         try {
             Putnik putnik = new Putnik();
             putnik.setId(rs.getInt("id"));
@@ -22,7 +23,7 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
             putnik.setMail(rs.getString("mail"));
             return putnik;
         } catch (SQLException e) {
-            throw new Exception(e.getMessage(), e);
+            throw new KartaException(e.getMessage(), e);
         }
     }
 

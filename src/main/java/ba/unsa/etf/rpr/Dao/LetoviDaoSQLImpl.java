@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.Dao;
 
 import ba.unsa.etf.rpr.Domain.Let;
+import ba.unsa.etf.rpr.Exception.KartaException;
 
 import java.sql.*;
 import java.util.Map;
@@ -13,7 +14,7 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
     }
 
     @Override
-    public Let row2object(ResultSet rs) throws Exception {
+    public Let row2object(ResultSet rs) throws KartaException {
         try {
             Let let = new Let();
             let.setId(rs.getInt("id"));
@@ -24,7 +25,7 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
             let.setTerminal(rs.getString("terminal"));
             return let;
         } catch (SQLException e) {
-            throw new Exception(e.getMessage(), e);
+            throw new KartaException(e.getMessage(), e);
         }
     }
 

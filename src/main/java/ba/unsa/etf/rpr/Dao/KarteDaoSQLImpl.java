@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.Dao;
 
 import ba.unsa.etf.rpr.Domain.Karta;
+import ba.unsa.etf.rpr.Exception.KartaException;
 
 import java.sql.*;
 import java.util.*;
@@ -12,7 +13,7 @@ public class KarteDaoSQLImpl extends AbstractDao<Karta> implements KarteDao{
     }
 
     @Override
-    public Karta row2object(ResultSet rs) throws Exception {
+    public Karta row2object(ResultSet rs) throws KartaException {
         try {
             Karta karta = new Karta();
             karta.setId(rs.getInt("id"));
@@ -21,8 +22,8 @@ public class KarteDaoSQLImpl extends AbstractDao<Karta> implements KarteDao{
             karta.setPutnik(DaoFactory.putniciDao().getById(rs.getInt("idPutnika")));
             karta.setSjediste(rs.getString("sjediste"));
             return karta;
-        } catch (SQLException e) {
-            throw new Exception(e.getMessage(), e);
+        } catch (Exception e) {
+            throw new KartaException(e.getMessage(), e);
         }
     }
     @Override
