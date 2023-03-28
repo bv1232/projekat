@@ -42,4 +42,7 @@ public class RegistracijaController {
             return;
         }
     }
+    public void cancelButton(ActionEvent actionEvent){
+        
+    }
 }
