@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.Controllers;
 
 import ba.unsa.etf.rpr.Domain.Putnik;
+import ba.unsa.etf.rpr.Exception.KartaException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,7 +14,7 @@ public class RegistracijaController {
     public TextField mailId;
     public TextField prezimeId;
     public TextField imeId;
-    public Button okButttonId;
+    public Button okButtonId;
     public Button cancelButtonId;
     private  String username,password;
 
@@ -31,4 +32,7 @@ public class RegistracijaController {
         lozinkaId.setText(username);
     }
 
+    public void okButtonClick(ActionEvent actionEvent) throws KartaException{
+
+    }
 }
