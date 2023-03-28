@@ -65,7 +65,7 @@
         </PasswordField>
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
             <buttons>
-                <Button fx:id="cancelButtonId" cancelButton="true" mnemonicParsing="false" onAction="#cancelButton" text="Cancel" />
+                <Button fx:id="cancelButtonId" cancelButton="true" mnemonicParsing="false" onAction="#cancelButtonClick" text="Cancel" />
                 <Button fx:id="okButtonId" defaultButton="true" mnemonicParsing="false" onAction="#okButtonClick" text="OK" />
             </buttons>
             <GridPane.margin>

@@ -43,7 +43,7 @@ public class RegistracijaController {
             return;
         }
     }
-    public void cancelButton(ActionEvent actionEvent){
+    public void cancelButtonClick(ActionEvent actionEvent){
         Stage stage = (Stage) cancelButtonId.getScene().getWindow();
         stage.close();
     }
