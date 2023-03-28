@@ -23,13 +23,12 @@ public class RegistracijaController {
         this.password=password;
     }
 
-    public void createUser(ActionEvent actionEvent) {
-        Putnik putnik = new Putnik();
 
-    }
 
     @FXML
     public void initialize(){
+
         lozinkaId.setText(username);
     }
+
 }
