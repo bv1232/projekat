@@ -39,7 +39,7 @@ public class RegistracijaController {
         if(lozinkaId.getText().isEmpty() || imeId.getText().isEmpty() || prezimeId.getText().isEmpty() || mailId.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setContentText("All fields must be filled out!");
+            alert.setContentText("Sva polja moraju biti popunjena!");
             alert.showAndWait();
             return;
         }
@@ -48,6 +48,12 @@ public class RegistracijaController {
         putnik.setPrezime(prezimeId.getText());
         putnik.setMail(mailId.getText());
         putnikManager.add(putnik);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Registracija");
+        alert.setContentText("Registracija je uspješna!");
+        alert.showAndWait();
+        Stage stage = (Stage) cancelButtonId.getScene().getWindow();
+        stage.close();
     }
     public void cancelButtonClick(ActionEvent actionEvent){
         Stage stage = (Stage) cancelButtonId.getScene().getWindow();
