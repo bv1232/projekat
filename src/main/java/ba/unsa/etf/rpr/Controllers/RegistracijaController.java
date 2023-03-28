@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.Controllers;
 
 import ba.unsa.etf.rpr.Domain.Putnik;
 import ba.unsa.etf.rpr.Exception.KartaException;
+import ba.unsa.etf.rpr.business.PutnikManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -19,7 +20,7 @@ public class RegistracijaController {
     public Button okButtonId;
     public Button cancelButtonId;
     private  String username,password;
-
+    private PutnikManager putnikManager = new PutnikManager();
 
     public RegistracijaController(String username, String password) {
         this.username=username;
@@ -42,6 +43,11 @@ public class RegistracijaController {
             alert.showAndWait();
             return;
         }
+        Putnik putnik = new Putnik();
+        putnik.setIme(imeId.getText());
+        putnik.setPrezime(prezimeId.getText());
+        putnik.setMail(mailId.getText());
+        putnikManager.add(putnik);
     }
     public void cancelButtonClick(ActionEvent actionEvent){
         Stage stage = (Stage) cancelButtonId.getScene().getWindow();
