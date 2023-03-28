@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="301.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="301.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controllers.RegistracijaController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.20001220703125" minWidth="10.0" prefWidth="124.79998779296875" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.20001220703125" minWidth="10.0" prefWidth="194.20001220703125" />
@@ -66,7 +66,7 @@
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
             <buttons>
                 <Button fx:id="cancelButtonId" cancelButton="true" mnemonicParsing="false" text="Cancel" />
-                <Button fx:id="okButttonId" defaultButton="true" mnemonicParsing="false" onAction="#createUser" text="OK" />
+                <Button fx:id="okButtonId" defaultButton="true" mnemonicParsing="false" onAction="#okButtonClick" text="OK" />
             </buttons>
             <GridPane.margin>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
