@@ -53,6 +53,11 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
 
     @Override
     public boolean doesUsernameExist(String username) throws KartaException {
-        return false;
-    }
+        try {
+            Putnik putnik = executeQueryUnique("SELECT * FROM users WHERE user = ?", new Object[]{username});
+            return true;
+        }catch (KartaException e){
+            return false;
+        }
+        }
 }
