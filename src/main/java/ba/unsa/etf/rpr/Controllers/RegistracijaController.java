@@ -48,6 +48,7 @@ public class RegistracijaController {
         putnik.setIme(imeId.getText());
         putnik.setPrezime(prezimeId.getText());
         putnik.setMail(mailId.getText());
+        putnik.setUsername(userNameId.getText());
         putnikManager.add(putnik);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registracija");
