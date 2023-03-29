@@ -50,4 +50,9 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
             throw new KartaException(e.getMessage(),e);
         }
         }
+
+    @Override
+    public boolean doesUsernameExist(String username) throws KartaException {
+        return false;
+    }
 }
