@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.Controllers;
 
+import ba.unsa.etf.rpr.business.PutnikManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +19,7 @@ public class LoginController {
     public TextField usernameId;
     public Button cancelButtonId;
     public Button okButtonId;
+    private PutnikManager putnikManager = new PutnikManager();
 
     public void cancelButtonClick (ActionEvent actionEvent){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -42,7 +44,7 @@ public class LoginController {
         RegistracijaController controller = new RegistracijaController(usernameId.getText(), passwordId.getText());
         //Parent root = FXMLLoader.load(getClass().getResource("/fxml/registracija.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registracija.fxml"));
-        Stage primaryStage=new Stage();
+        Stage primaryStage = new Stage();
         primaryStage.setTitle("Registracija");
         loader.setController(controller);
         primaryStage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE,USE_COMPUTED_SIZE));
