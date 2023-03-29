@@ -21,6 +21,7 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
             putnik.setIme(rs.getString("ime"));
             putnik.setPrezime(rs.getString("prezime"));
             putnik.setMail(rs.getString("mail"));
+            putnik.setUsername(rs.getString("username"));
             return putnik;
         } catch (SQLException e) {
             throw new KartaException(e.getMessage(), e);
