@@ -78,10 +78,10 @@
             <Insets bottom="20.0" right="7.0" top="20.0" />
          </GridPane.margin>
       </Label>
-      <PasswordField fx:id="userNameId" layoutX="135.0" layoutY="174.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <TextField fx:id="mailId1" layoutX="135.0" layoutY="124.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets right="10.0" />
          </GridPane.margin>
-      </PasswordField>
+      </TextField>
     </children>
 </GridPane>
