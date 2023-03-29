@@ -36,7 +36,6 @@ public class LoginController {
     }
 
     public void okButtonClick(ActionEvent actionEvent) {
-
     }
 
     public void otvoriProzorZaRegistraciju(ActionEvent actionEvent) throws IOException {
