@@ -14,4 +14,9 @@ public class KorisnikPanelController {
     public RadioButton prvaKlasaId;
     public RadioButton biznisKlasaId;
     public RadioButton ekonomskaKlasaId;
+
+    private String username;
+    public KorisnikPanelController(String username){
+        this.username = username;
+    }
 }
