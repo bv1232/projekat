@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.Controllers;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -18,5 +19,9 @@ public class KorisnikPanelController {
     private String username;
     public KorisnikPanelController(String username){
         this.username = username;
+    }
+    @FXML
+    public void initialize(){
+        this.usernameLabelId.setText(username);
     }
 }
