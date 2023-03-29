@@ -46,11 +46,12 @@ public class Putnik implements Idable{
         return username;
     }
 
-    public Putnik(int id, String ime, String prezime, String mail) {
+    public Putnik(int id, String ime, String prezime, String mail, String username) {
         this.id = id;
         this.ime = ime;
         this.prezime = prezime;
         this.mail = mail;
+        this.username = username;
     }
     public Putnik(){}
 
@@ -59,7 +60,7 @@ public class Putnik implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Putnik putnik = (Putnik) o;
-        return id == putnik.id && Objects.equals(ime, putnik.ime) && Objects.equals(prezime, putnik.prezime) && Objects.equals(mail, putnik.mail);
+        return id == putnik.id && Objects.equals(ime, putnik.ime) && Objects.equals(prezime, putnik.prezime) && Objects.equals(mail, putnik.mail) && Objects.equals(username, putnik.username);
     }
 
     @Override
