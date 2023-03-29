@@ -64,8 +64,8 @@
         </VBox>
         <ButtonBar GridPane.rowIndex="1">
             <buttons>
-                <Button cancelButton="true" mnemonicParsing="false" text="Cancel" />
-                <Button defaultButton="true" mnemonicParsing="false" text="OK" />
+                <Button cancelButton="true" mnemonicParsing="false" onAction="#cancelButtonClick" text="Cancel" />
+                <Button defaultButton="true" mnemonicParsing="false"  text="OK" />
             </buttons>
             <opaqueInsets>
                 <Insets />
