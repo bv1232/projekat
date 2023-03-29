@@ -5,4 +5,5 @@ import ba.unsa.etf.rpr.Exception.KartaException;
 
 public interface PutniciDao extends Dao<Putnik> {
     int logInId(String username, String password)  throws KartaException;
+    boolean doesUsernameExist(String username) throws KartaException;
 }
