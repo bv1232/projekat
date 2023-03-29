@@ -38,7 +38,7 @@ public class LoginController {
     }
 
     public void okButtonClick(ActionEvent actionEvent) {
-
+        //int logInId = putnikManager.
     }
 
     public void otvoriProzorZaRegistraciju(ActionEvent actionEvent) throws IOException {

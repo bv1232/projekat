@@ -33,4 +33,7 @@ public class PutnikManager {
         return DaoFactory.putniciDao().getAll();
     }
 
+    public int logInId(String username, String password) throws KartaException{
+        return DaoFactory.putniciDao().logInId(username, password);
+    }
 }
