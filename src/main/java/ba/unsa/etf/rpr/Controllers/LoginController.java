@@ -21,6 +21,9 @@ public class LoginController {
     public Button cancelButtonId;
     public Button okButtonId;
 
+    public void setCancelButtonClick (ActionEvent actionEvent){
+
+    }
     public void otvoriProzorZaRegistraciju(ActionEvent actionEvent) throws IOException {
         RegistracijaController controller = new RegistracijaController(usernameId.getText(), passwordId.getText());
         //Parent root = FXMLLoader.load(getClass().getResource("/fxml/registracija.fxml"));
