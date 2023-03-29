@@ -19,6 +19,7 @@ public class RegistracijaController {
     public TextField imeId;
     public Button okButtonId;
     public Button cancelButtonId;
+    public  TextField userNameId;
     private  String username,password;
     private PutnikManager putnikManager = new PutnikManager();
 
@@ -31,8 +32,8 @@ public class RegistracijaController {
 
     @FXML
     public void initialize(){
-
-        lozinkaId.setText(username);
+        userNameId.setText(username);
+        lozinkaId.setText(password);
     }
 
     public void okButtonClick(ActionEvent actionEvent) throws KartaException{
