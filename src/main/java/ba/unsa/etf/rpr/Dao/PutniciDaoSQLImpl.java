@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.Exception.KartaException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -41,6 +42,12 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
 
     @Override
     public int logInId(String username, String password) throws KartaException {
-        return 0;
-    }
+        try {
+            List<Putnik> list = executeQuery("SELECT * FROM users WHERE user = ? AND password = ?", new Object[]{username, password});
+            if (list.isEmpty()) return 0;
+            return list.get(0).getId();
+        }catch (KartaException e){
+            throw new KartaException(e.getMessage(),e);
+        }
+        }
 }
