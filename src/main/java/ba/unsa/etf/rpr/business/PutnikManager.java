@@ -36,4 +36,13 @@ public class PutnikManager {
     public int logInId(String username, String password) throws KartaException{
         return DaoFactory.putniciDao().logInId(username, password);
     }
+    public boolean doesUsernameExist(int id) throws KartaException{
+        PutnikManager putnikManager = new PutnikManager();
+        try {
+            Putnik putnik = putnikManager.getById(id);
+        }catch (KartaException e){
+            return false;
+        }
+        return true;
+    }
 }
