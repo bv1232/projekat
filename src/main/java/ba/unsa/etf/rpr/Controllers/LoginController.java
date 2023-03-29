@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -17,6 +18,8 @@ public class LoginController {
     public Hyperlink registarId;
     public PasswordField passwordId;
     public TextField usernameId;
+    public Button cancelButtonId;
+    public Button okButtonId;
 
     public void otvoriProzorZaRegistraciju(ActionEvent actionEvent) throws IOException {
         RegistracijaController controller = new RegistracijaController(usernameId.getText(), passwordId.getText());
