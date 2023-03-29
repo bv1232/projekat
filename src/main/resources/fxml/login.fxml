@@ -65,7 +65,7 @@
         <ButtonBar GridPane.rowIndex="1">
             <buttons>
                 <Button fx:id="cancelButtonId" cancelButton="true" mnemonicParsing="false" onAction="#cancelButtonClick" text="Cancel" />
-                <Button defaultButton="true" mnemonicParsing="false"  text="OK" />
+                <Button fx:id="okButtonId" defaultButton="true" mnemonicParsing="false" onAction="#okButtonClick" text="OK" />
             </buttons>
             <opaqueInsets>
                 <Insets />
