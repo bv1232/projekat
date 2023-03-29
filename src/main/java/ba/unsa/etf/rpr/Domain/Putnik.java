@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Putnik implements Idable{
     private int id;
-    private String ime, prezime, mail;
+    private String ime, prezime, mail, username;
 
     public void setId(int id) {
         this.id = id;
@@ -22,6 +22,10 @@ public class Putnik implements Idable{
         this.mail = mail;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public int getId() {
         return id;
     }
@@ -36,6 +40,10 @@ public class Putnik implements Idable{
 
     public String getMail() {
         return mail;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public Putnik(int id, String ime, String prezime, String mail) {
@@ -68,4 +76,6 @@ public class Putnik implements Idable{
                 ", mail='" + mail + '\'' +
                 '}';
     }
+
+
 }
