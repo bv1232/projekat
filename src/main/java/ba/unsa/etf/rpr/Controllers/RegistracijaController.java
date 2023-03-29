@@ -37,7 +37,7 @@ public class RegistracijaController {
     }
 
     public void okButtonClick(ActionEvent actionEvent) throws KartaException{
-        if(lozinkaId.getText().isEmpty() || imeId.getText().isEmpty() || prezimeId.getText().isEmpty() || mailId.getText().isEmpty()){
+        if(lozinkaId.getText().isEmpty() || imeId.getText().isEmpty() || prezimeId.getText().isEmpty() || mailId.getText().isEmpty() || userNameId.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Sva polja moraju biti popunjena!");
