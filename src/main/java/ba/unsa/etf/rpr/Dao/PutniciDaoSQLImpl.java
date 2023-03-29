@@ -35,6 +35,7 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
         row.put("ime", object.getIme());
         row.put("prezime", object.getPrezime());
         row.put("mail", object.getMail());
+        row.put("username", object.getUsername());
         return row;
     }
 
