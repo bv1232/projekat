@@ -21,8 +21,9 @@ public class LoginController {
     public Button cancelButtonId;
     public Button okButtonId;
 
-    public void setCancelButtonClick (ActionEvent actionEvent){
-
+    public void cancelButtonClick (ActionEvent actionEvent){
+        Stage stage = (Stage) cancelButtonId.getScene().getWindow();
+        stage.close();
     }
     public void otvoriProzorZaRegistraciju(ActionEvent actionEvent) throws IOException {
         RegistracijaController controller = new RegistracijaController(usernameId.getText(), passwordId.getText());
