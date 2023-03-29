@@ -39,4 +39,8 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
         return row;
     }
 
+    @Override
+    public int logInId(String username, String password) throws KartaException {
+        return 0;
+    }
 }
