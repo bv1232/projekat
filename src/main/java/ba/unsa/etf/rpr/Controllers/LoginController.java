@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.Controllers;
 
+import ba.unsa.etf.rpr.Domain.Putnik;
+import ba.unsa.etf.rpr.Exception.KartaException;
 import ba.unsa.etf.rpr.business.PutnikManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -37,8 +39,26 @@ public class LoginController {
             return;
     }
 
-    public void okButtonClick(ActionEvent actionEvent) {
-        //int logInId = putnikManager.
+    public void okButtonClick(ActionEvent actionEvent) throws KartaException, IOException {
+        int logInId = putnikManager.logInId(usernameId.getText(), passwordId.getText());
+        if(logInId == 0){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Pogrešni podaci");
+            alert.setContentText("Pogrešno korisničko ime ili lozinka");
+            alert.showAndWait();
+        }else {
+            Putnik putnik = putnikManager.getById(logInId);
+            KorisnikPanelController controller = new KorisnikPanelController(usernameId.getText());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnkikPanel.fxml"));
+            Stage primaryStage = new Stage();
+            loader.setController(controller);
+            primaryStage.setScene(new Scene(loader.load(),USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            primaryStage.setResizable(false);
+            primaryStage.show();
+            Stage stage = (Stage) okButtonId.getScene().getWindow();
+            stage.close();
+        }
     }
 
     public void otvoriProzorZaRegistraciju(ActionEvent actionEvent) throws IOException {
