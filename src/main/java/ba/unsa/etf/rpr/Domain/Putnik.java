@@ -67,7 +67,7 @@ public class Putnik implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Putnik putnik = (Putnik) o;
-        return id == putnik.id && Objects.equals(ime, putnik.ime) && Objects.equals(prezime, putnik.prezime) && Objects.equals(mail, putnik.mail) && Objects.equals(username, putnik.username);
+        return id == putnik.id && Objects.equals(ime, putnik.ime) && Objects.equals(prezime, putnik.prezime) && Objects.equals(mail, putnik.mail) && Objects.equals(username, putnik.username) && Objects.equals(password, putnik.password);
     }
 
     @Override
