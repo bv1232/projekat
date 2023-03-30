@@ -72,7 +72,7 @@ public class Putnik implements Idable{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ime, prezime, mail, username);
+        return Objects.hash(id, ime, prezime, mail, username, password);
     }
 
     @Override
