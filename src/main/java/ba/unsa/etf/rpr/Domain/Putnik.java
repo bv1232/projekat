@@ -83,6 +83,7 @@ public class Putnik implements Idable{
                 ", prezime='" + prezime + '\'' +
                 ", mail='" + mail + '\'' +
                 ", username='"+ username + '\'' +
+                ", password='"+ password + '\'' +
                 '}';
     }
 
