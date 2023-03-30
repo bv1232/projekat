@@ -17,6 +17,7 @@ public class RegistracijaController {
     public TextField mailId;
     public TextField prezimeId;
     public TextField imeId;
+
     public Button okButtonId;
     public Button cancelButtonId;
     public  TextField userNameId;
@@ -49,6 +50,7 @@ public class RegistracijaController {
         putnik.setPrezime(prezimeId.getText());
         putnik.setMail(mailId.getText());
         putnik.setUsername(userNameId.getText());
+        putnik.setPassword(lozinkaId.getText());
         putnikManager.add(putnik);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registracija");
