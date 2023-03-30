@@ -50,7 +50,7 @@ public class LoginController {
         }else {
             Putnik putnik = putnikManager.getById(logInId);
             KorisnikPanelController controller = new KorisnikPanelController(usernameId.getText());
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnkikPanel.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnikPanel.fxml"));
             Stage primaryStage = new Stage();
             loader.setController(controller);
             primaryStage.setScene(new Scene(loader.load(),USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
