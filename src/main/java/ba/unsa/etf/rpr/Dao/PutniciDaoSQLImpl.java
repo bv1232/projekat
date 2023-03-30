@@ -45,7 +45,7 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
     @Override
     public int logInId(String username, String password) throws KartaException {
         try {
-            List<Putnik> list = executeQuery("SELECT * FROM users WHERE user = ? AND password = ?", new Object[]{username, password});
+            List<Putnik> list = executeQuery("SELECT * FROM putnici WHERE username = ? AND password = ?", new Object[]{username, password});
             if (list.isEmpty()) return 0;
             return list.get(0).getId();
         }catch (KartaException e){
@@ -56,7 +56,7 @@ public class PutniciDaoSQLImpl extends AbstractDao<Putnik> implements PutniciDao
     @Override
     public boolean doesUsernameExist(String username) throws KartaException {
         try {
-            Putnik putnik = executeQueryUnique("SELECT * FROM users WHERE user = ?", new Object[]{username});
+            Putnik putnik = executeQueryUnique("SELECT * FROM putnici WHERE username = ?", new Object[]{username});
             return true;
         }catch (KartaException e){
             return false;
