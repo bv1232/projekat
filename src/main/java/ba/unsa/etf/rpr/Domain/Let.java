@@ -26,7 +26,7 @@ public class Let implements Idable{
         this.datum = datum;
     }
 
-    public void setVrijemePolaska(Time vrijemePolaska) {
+    public void setVrijemePolaska(java.sql.Date vrijemePolaska) {
         this.vrijemePolaska = vrijemePolaska;
     }
 
