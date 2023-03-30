@@ -1,6 +1,10 @@
 package ba.unsa.etf.rpr.Controllers;
 
+import ba.unsa.etf.rpr.Domain.Let;
+import ba.unsa.etf.rpr.Exception.KartaException;
 import javafx.scene.control.*;
+
+import java.sql.Date;
 
 public class AdminPanelController {
     public TableView letoviTableId;
@@ -20,4 +24,9 @@ public class AdminPanelController {
     public Button logOutButtonId;
     public Tab putniciTabId;
     public Tab letoviTabId;
+
+    public void addButtonClick() throws KartaException {
+
+
+    }
 }
