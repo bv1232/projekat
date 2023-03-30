@@ -26,6 +26,9 @@ public class Putnik implements Idable{
         this.username = username;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
     public int getId() {
         return id;
     }
@@ -46,6 +49,9 @@ public class Putnik implements Idable{
         return username;
     }
 
+    public String getPassword() {
+        return password;
+    }
     public Putnik(int id, String ime, String prezime, String mail, String username) {
         this.id = id;
         this.ime = ime;
@@ -78,6 +84,5 @@ public class Putnik implements Idable{
                 ", username='"+ username + '\'' +
                 '}';
     }
-
 
 }
