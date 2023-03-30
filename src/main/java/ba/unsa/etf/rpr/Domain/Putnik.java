@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Putnik implements Idable{
     private int id;
-    private String ime, prezime, mail, username;
+    private String ime, prezime, mail, username, password;
 
     public void setId(int id) {
         this.id = id;
