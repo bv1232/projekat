@@ -52,12 +52,13 @@ public class Putnik implements Idable{
     public String getPassword() {
         return password;
     }
-    public Putnik(int id, String ime, String prezime, String mail, String username) {
+    public Putnik(int id, String ime, String prezime, String mail, String username, String password) {
         this.id = id;
         this.ime = ime;
         this.prezime = prezime;
         this.mail = mail;
         this.username = username;
+        this.password = password;
     }
     public Putnik(){}
 
