@@ -7,7 +7,7 @@ public class Let implements Idable{
     private int id;
     private String pocetnaDestinacija, krajnjaDestinacija;
     private Date datum;
-    private Time vrijemePolaska;
+    private Date vrijemePolaska;
     private String terminal;
 
     public void setId(int id) {
@@ -50,7 +50,7 @@ public class Let implements Idable{
         return datum;
     }
 
-    public Time getVrijemePolaska() {
+    public Date getVrijemePolaska() {
         return vrijemePolaska;
     }
 
