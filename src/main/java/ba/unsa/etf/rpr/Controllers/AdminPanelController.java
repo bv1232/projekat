@@ -79,4 +79,7 @@ public class AdminPanelController {
        vrijemeId.setText(vrijemeColId.getCellData(i).toString());
        terminalId.setText(terminalColId.getCellData(i).toString());
     }
+
+    public void deleteButtonClick(){
+    }
 }
