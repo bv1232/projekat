@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 
 import java.sql.*;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -39,5 +40,15 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
         row.put("krajnja destinacija", object.getKrajnjaDestinacija());
         row.put("terminal", object.getTerminal());
         return row;
+    }
+
+    @Override
+    public Let getByKrajnjaDestinacija(String krajnja) throws KartaException {
+        try {
+            List<Let> letovi = executeQuery("SELECT * FROM letovi WHERE krajnja destinacija = ?", new Object[]{krajnja});
+            return letovi.get(0);
+        }catch (KartaException e){
+            throw new KartaException(e.getMessage(),e);
+        }
     }
 }
