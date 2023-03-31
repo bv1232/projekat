@@ -49,7 +49,13 @@ public class AdminPanelController {
        }
     }
 
-    public void updateButtonClick(){
-
+    public void updateButtonClick() throws KartaException {
+        Let let = new Let();
+        let.setPocetnaDestinacija(polazisteId.getText());
+        let.setKrajnjaDestinacija(krajnjaId.getText());
+        let.setDatum(Date.valueOf(datumId.getValue()));
+        let.setVrijemePolaska(Date.valueOf(vrijemeId.getText()));
+        let.setTerminal(terminalId.getText());
+        letManager.update(let);
     }
 }
