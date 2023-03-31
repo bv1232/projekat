@@ -65,4 +65,8 @@ public class AdminPanelController {
         let.setTerminal(terminalId.getText());
         letManager.update(let);
     }
+
+    public void getLet(){
+
+    }
 }
