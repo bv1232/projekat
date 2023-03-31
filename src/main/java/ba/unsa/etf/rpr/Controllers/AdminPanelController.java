@@ -35,6 +35,6 @@ public class AdminPanelController {
         let.setDatum(Date.valueOf(datumId.getValue()));
         let.setVrijemePolaska(Date.valueOf(vrijemeId.getText()));
         let.setTerminal(terminalId.getText());
-
+        letManager.add(let);
     }
 }
