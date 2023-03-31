@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.Controllers;
 
 import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
+import ba.unsa.etf.rpr.business.LetManager;
 import javafx.scene.control.*;
 
 import java.sql.Date;
@@ -25,8 +26,15 @@ public class AdminPanelController {
     public Tab putniciTabId;
     public Tab letoviTabId;
 
-    public void addButtonClick() throws KartaException {
+    private LetManager letManager = new LetManager();
 
+    public void addButtonClick() throws KartaException {
+        Let let = new Let();
+        let.setPocetnaDestinacija(polazisteId.getText());
+        let.setKrajnjaDestinacija(krajnjaId.getText());
+        let.setDatum(Date.valueOf(datumId.getValue()));
+        let.setVrijemePolaska(Date.valueOf(vrijemeId.getText()));
+        let.setTerminal(terminalId.getText());
 
     }
 }
