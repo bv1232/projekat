@@ -80,6 +80,7 @@ public class AdminPanelController {
        terminalId.setText(terminalColId.getCellData(i).toString());
     }
 
-    public void deleteButtonClick(){
+    public void deleteButtonClick() throws KartaException {
+        letManager.delete(letManager.getByKrajnjaDestinacija(krajnjaId.getText()).getId());
     }
 }
