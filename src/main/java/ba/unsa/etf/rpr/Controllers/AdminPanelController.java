@@ -29,6 +29,13 @@ public class AdminPanelController {
     private LetManager letManager = new LetManager();
 
     public void addButtonClick() throws KartaException {
+        if(polazisteId.getText().isEmpty() || krajnjaId.getText().isEmpty() || datumId.getValue() == null || vrijemeId.getText().isEmpty() || terminalId.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Prazna polja");
+            alert.setContentText("Molimo popunite prazna polja");
+            alert.showAndWait();
+        }
        try {
            Let let = new Let();
            let.setPocetnaDestinacija(polazisteId.getText());
