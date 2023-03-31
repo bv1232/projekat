@@ -48,4 +48,8 @@ public class AdminPanelController {
            throw new KartaException(e.getMessage(), e);
        }
     }
+
+    public void updateButtonClick(){
+
+    }
 }
