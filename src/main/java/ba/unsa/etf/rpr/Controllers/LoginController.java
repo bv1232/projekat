@@ -58,17 +58,18 @@ public class LoginController {
                 primaryStage.show();
                 Stage stage = (Stage) okButtonId.getScene().getWindow();
                 stage.close();
+            }else {
+                Putnik putnik = putnikManager.getById(logInId);
+                KorisnikPanelController controller = new KorisnikPanelController(usernameId.getText());
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnikPanel.fxml"));
+                Stage primaryStage = new Stage();
+                loader.setController(controller);
+                primaryStage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                primaryStage.setResizable(false);
+                primaryStage.show();
+                Stage stage = (Stage) okButtonId.getScene().getWindow();
+                stage.close();
             }
-            Putnik putnik = putnikManager.getById(logInId);
-            KorisnikPanelController controller = new KorisnikPanelController(usernameId.getText());
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnikPanel.fxml"));
-            Stage primaryStage = new Stage();
-            loader.setController(controller);
-            primaryStage.setScene(new Scene(loader.load(),USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            primaryStage.setResizable(false);
-            primaryStage.show();
-            Stage stage = (Stage) okButtonId.getScene().getWindow();
-            stage.close();
         }
     }
 
