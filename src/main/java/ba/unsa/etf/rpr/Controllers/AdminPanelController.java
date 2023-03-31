@@ -29,12 +29,16 @@ public class AdminPanelController {
     private LetManager letManager = new LetManager();
 
     public void addButtonClick() throws KartaException {
-        Let let = new Let();
-        let.setPocetnaDestinacija(polazisteId.getText());
-        let.setKrajnjaDestinacija(krajnjaId.getText());
-        let.setDatum(Date.valueOf(datumId.getValue()));
-        let.setVrijemePolaska(Date.valueOf(vrijemeId.getText()));
-        let.setTerminal(terminalId.getText());
-        letManager.add(let);
+       try {
+           Let let = new Let();
+           let.setPocetnaDestinacija(polazisteId.getText());
+           let.setKrajnjaDestinacija(krajnjaId.getText());
+           let.setDatum(Date.valueOf(datumId.getValue()));
+           let.setVrijemePolaska(Date.valueOf(vrijemeId.getText()));
+           let.setTerminal(terminalId.getText());
+           letManager.add(let);
+       }catch(KartaException e){
+           throw new KartaException(e.getMessage(), e);
+       }
     }
 }
