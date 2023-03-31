@@ -32,4 +32,7 @@ public class LetManager {
     public List<Let> getAll() throws KartaException{
         return DaoFactory.letoviDao().getAll();
     }
+    public Let getByKrajnjaDestinacija(String krajnja) throws KartaException{
+        return DaoFactory.letoviDao().getByKrajnjaDestinacija(krajnja);
+    }
 }
