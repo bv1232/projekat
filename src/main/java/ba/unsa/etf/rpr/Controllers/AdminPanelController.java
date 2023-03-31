@@ -50,6 +50,13 @@ public class AdminPanelController {
     }
 
     public void updateButtonClick() throws KartaException {
+        if(polazisteId.getText().isEmpty() || krajnjaId.getText().isEmpty() || datumId.getValue() == null || vrijemeId.getText().isEmpty() || terminalId.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Prazna polja");
+            alert.setContentText("Molimo izaberite let");
+            alert.showAndWait();
+        }
         Let let = new Let();
         let.setPocetnaDestinacija(polazisteId.getText());
         let.setKrajnjaDestinacija(krajnjaId.getText());
