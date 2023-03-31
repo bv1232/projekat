@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.Controllers;
 import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 import ba.unsa.etf.rpr.business.LetManager;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Callback;
 
@@ -31,6 +32,10 @@ public class AdminPanelController {
 
     private LetManager letManager = new LetManager();
 
+    @FXML
+    public void initialize(){
+
+    }
 
     public void addButtonClick() throws KartaException {
         if(polazisteId.getText().isEmpty() || krajnjaId.getText().isEmpty() || datumId.getValue() == null || vrijemeId.getText().isEmpty() || terminalId.getText().isEmpty()){
