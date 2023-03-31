@@ -49,10 +49,10 @@ public class LoginController {
             alert.showAndWait();
         }else {
             if(logInId == 5){
-                AdminPanelController controller = new AdminPanelController();
+               // AdminPanelController controller = new AdminPanelController();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPanel.fxml"));
                 Stage primaryStage = new Stage();
-                loader.setController(controller);
+               // loader.setController(controller);
                 primaryStage.setScene(new Scene(loader.load(),USE_COMPUTED_SIZE,USE_COMPUTED_SIZE));
                 primaryStage.setResizable(false);
                 primaryStage.show();
