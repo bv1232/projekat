@@ -48,7 +48,7 @@ public class LoginController {
             alert.setContentText("Pogrešno korisničko ime ili lozinka");
             alert.showAndWait();
         }else {
-            if(usernameId.getText() == "admin" && passwordId.getText() == "admin"){
+            if(logInId == 5){
                 AdminPanelController controller = new AdminPanelController();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adminPanel.fxml"));
                 Stage primaryStage = new Stage();
