@@ -50,6 +50,12 @@ public class AdminPanelController {
            letManager.add(let);
        }catch(KartaException e){
            throw new KartaException(e.getMessage(), e);
+       }catch(NumberFormatException e){
+           Alert alert = new Alert(Alert.AlertType.ERROR);
+           alert.setTitle("Error");
+           alert.setHeaderText("Netačni podaci");
+           alert.setContentText("Unesite tačne podatke");
+           alert.showAndWait();
        }
     }
 
