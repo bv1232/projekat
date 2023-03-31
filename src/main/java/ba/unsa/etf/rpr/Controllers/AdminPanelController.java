@@ -4,8 +4,10 @@ import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 import ba.unsa.etf.rpr.business.LetManager;
 import javafx.scene.control.*;
+import javafx.util.Callback;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class AdminPanelController {
     public TableView letoviTableId;
@@ -67,6 +69,12 @@ public class AdminPanelController {
     }
 
     public void getLet(){
-
+       int i = letoviTableId.getSelectionModel().getSelectedIndex();
+       if(i <= -1) return;
+       polazisteId.setText(polazisteColId.getCellData(i).toString());
+       krajnjaId.setText(krajnjaColId.getCellData(i).toString());
+       datumId.setValue(LocalDate.parse(datumColId.getCellData(i).toString()));
+       vrijemeId.setText(vrijemeColId.getCellData(i).toString());
+       terminalId.setText(terminalColId.getCellData(i).toString());
     }
 }
