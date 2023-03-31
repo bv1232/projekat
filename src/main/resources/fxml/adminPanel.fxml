@@ -35,7 +35,7 @@
                         <RowConstraints maxHeight="30.399999999999977" minHeight="10.0" prefHeight="30.399999999999977" />
                     </rowConstraints>
                      <children>
-                        <TableView fx:id="letoviTableId" GridPane.rowSpan="2">
+                        <TableView fx:id="letoviTableId" GridPane.rowSpan="2" onMouseClicked="#getLet">
                           <columns>
                             <TableColumn fx:id="polazisteColId" prefWidth="75.0" text="Polazište" />
                             <TableColumn fx:id="krajnjaColId" prefWidth="108.79998779296875" text="Krajnja destinacija" />

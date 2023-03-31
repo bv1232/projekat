@@ -8,6 +8,7 @@ import javafx.util.Callback;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 public class AdminPanelController {
     public TableView letoviTableId;
@@ -29,6 +30,7 @@ public class AdminPanelController {
     public Tab letoviTabId;
 
     private LetManager letManager = new LetManager();
+
 
     public void addButtonClick() throws KartaException {
         if(polazisteId.getText().isEmpty() || krajnjaId.getText().isEmpty() || datumId.getValue() == null || vrijemeId.getText().isEmpty() || terminalId.getText().isEmpty()){
