@@ -162,7 +162,7 @@
                         <TableView fx:id="putniciTableId" onMouseClicked="#getLet" GridPane.rowSpan="2">
                            <columns>
                               <TableColumn fx:id="imeColId" prefWidth="75.0" text="Ime" />
-                              <TableColumn fx:id="prezimeColID" prefWidth="108.79998779296875" text="Prezime" />
+                              <TableColumn fx:id="prezimeColId" prefWidth="108.79998779296875" text="Prezime" />
                               <TableColumn fx:id="mailColId" prefWidth="91.19999694824219" text="Mail" />
                               <TableColumn fx:id="usernameColId" prefWidth="97.60003662109375" text="Korisničko ime" />
                               <TableColumn fx:id="passwordColId" prefWidth="65.5999755859375" text="Lozinka" />
@@ -202,7 +202,7 @@
                                     <Insets left="20.0" right="20.0" top="20.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="mailID">
+                              <TextField fx:id="mailId">
                                  <padding>
                                     <Insets top="10.0" />
                                  </padding>
@@ -228,7 +228,7 @@
                                     <Insets left="20.0" right="20.0" top="20.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="passwordID">
+                              <TextField fx:id="passwordId">
                                  <padding>
                                     <Insets top="10.0" />
                                  </padding>
