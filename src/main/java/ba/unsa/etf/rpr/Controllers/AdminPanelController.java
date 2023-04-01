@@ -173,6 +173,13 @@ public class AdminPanelController {
     }
 
     public void updatePutnikButtonClick() throws KartaException {
+        if(imeId.getText().isEmpty() || prezimeId.getText().isEmpty() || mailId.getText().isEmpty() || usernameId.getText().isEmpty() || passwordId.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Prazna polja");
+            alert.setContentText("Molimo izaberite putnika");
+            alert.showAndWait();
+        }
         Putnik putnik = new Putnik();
         putnik.setId(putnikId);
         putnik.setIme(imeId.getText());
