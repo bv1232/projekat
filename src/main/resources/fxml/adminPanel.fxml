@@ -240,7 +240,8 @@
                         </VBox>
                         <HBox GridPane.rowIndex="2" GridPane.rowSpan="2">
                            <children>
-                              <Button fx:id="addPutnikButtonId" mnemonicParsing="false" text="Add">
+                              <Button fx:id="addPutnikButtonId" mnemonicParsing="false" text="Add"
+                              onAction="#addPutnikButtonClick">
                                  <HBox.margin>
                                     <Insets bottom="20.0" left="20.0" right="30.0" top="20.0" />
                                  </HBox.margin>
