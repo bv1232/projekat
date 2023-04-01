@@ -39,16 +39,16 @@ public class AdminPanelController {
     public TableColumn<Let, Integer> idColId;
     public TableView<Putnik> putniciTableId;
     public TableColumn<Putnik, String> imeColId;
-    public TableColumn<Putnik, String> prezimeColID;
+    public TableColumn<Putnik, String> prezimeColId;
     public TableColumn<Putnik, String> mailColId;
     public TableColumn<Putnik, String> usernameColId;
     public TableColumn<Putnik, String> passwordColId;
     public TableColumn<Putnik, Integer> idPutnikColId;
     public TextField imeId;
     public TextField prezimeId;
-    public TextField mailID;
+    public TextField mailId;
     public TextField usernameId;
-    public TextField passwordID;
+    public TextField passwordId;
     public Button addPutnikButtonId;
     public Button updatePutnikButtonId;
     public Button deletePutnikButtonId;
@@ -146,7 +146,7 @@ public class AdminPanelController {
     }
 
     public void addPutnikButtonClick() throws KartaException {
-        if(imeId.getText().isEmpty() || prezimeId.getText().isEmpty() || mailID.getText().isEmpty() || usernameId.getText().isEmpty() || passwordID.getText().isEmpty()){
+        if(imeId.getText().isEmpty() || prezimeId.getText().isEmpty() || mailId.getText().isEmpty() || usernameId.getText().isEmpty() || passwordId.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Prazna polja");
@@ -156,8 +156,8 @@ public class AdminPanelController {
         try {
             Putnik putnik = new Putnik();
             putnik.setUsername(usernameId.getText());
-            putnik.setPassword(passwordID.getText());
-            putnik.setMail(mailID.getText());
+            putnik.setPassword(passwordId.getText());
+            putnik.setMail(mailId.getText());
             putnik.setIme(imeId.getText());
             putnik.setPrezime(prezimeId.getText());
             putnikManager.add(putnik);
@@ -177,6 +177,13 @@ public class AdminPanelController {
     }
 
     public void getPutnik(){
-
+        int i = putniciTableId.getSelectionModel().getSelectedIndex();
+        if(i <= -1) return;
+        imeId.setText(imeColId.getCellData(i).toString());
+        prezimeId.setText(prezimeColId.getCellData(i).toString());
+        mailId.setText(mailColId.getCellData(i).toString());
+        usernameId.setText(usernameColId.getCellData(i).toString());
+        passwordId.setText(passwordColId.getCellData(i).toString());
+        putnikId = Integer.valueOf(idPutnikColId.getCellData(i).toString());
     }
 }
