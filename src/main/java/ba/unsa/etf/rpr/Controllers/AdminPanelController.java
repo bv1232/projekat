@@ -152,6 +152,7 @@ public class AdminPanelController {
             alert.setContentText("Molimo popunite prazna polja");
             alert.showAndWait();
         }
+        try {
             Putnik putnik = new Putnik();
             putnik.setUsername(usernameId.getText());
             putnik.setPassword(passwordID.getText());
@@ -159,5 +160,14 @@ public class AdminPanelController {
             putnik.setIme(imeId.getText());
             putnik.setPrezime(prezimeId.getText());
             putnikManager.add(putnik);
+        }catch(KartaException e){
+            throw new KartaException(e.getMessage(), e);
+        }catch(NumberFormatException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Netačni podaci");
+            alert.setContentText("Unesite tačne podatke");
+            alert.showAndWait();
+        }
     }
 }
