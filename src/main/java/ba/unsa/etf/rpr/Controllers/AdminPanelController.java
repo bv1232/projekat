@@ -3,8 +3,11 @@ package ba.unsa.etf.rpr.Controllers;
 import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 import ba.unsa.etf.rpr.business.LetManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
 import java.awt.event.ActionEvent;
@@ -103,7 +106,16 @@ public class AdminPanelController {
         localDate = datumId.getValue();
     }
 
-    public void updateTableLetovi(){
-
+    public void updateTableLetovi() throws KartaException {
+        idColId.setCellFactory(new PropertyValueFactory<Let, Integer>("id"));
+        polazisteColId.setCellFactory(new PropertyValueFactory<Let, String>("Polaziste"));
+        krajnjaColId.setCellFactory(new PropertyValueFactory<Let, String>("Krajnja destinacija"));
+        datumColId.setCellFactory(new PropertyValueFactory<Let, Date>("Datum polaska"));
+        vrijemeColId.setCellFactory(new PropertyValueFactory<Let, Time>("Vrijeme polaska"));
+        terminalColId.setCellFactory(new PropertyValueFactory<Let, String>("Terminal"));
+        List<Let> letovi = letManager.getAll();
+        ObservableList<Let> letoviObs = FXCollections.observableArrayList(letovi);
+        letoviTableId.setItems(letoviObs);
+        letoviTableId.refresh();
     }
 }
