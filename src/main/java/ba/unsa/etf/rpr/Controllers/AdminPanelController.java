@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Callback;
 
+import java.awt.event.ActionEvent;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
@@ -96,6 +97,8 @@ public class AdminPanelController {
         letManager.delete(letManager.getByKrajnjaDestinacija(krajnjaId.getText()).getId());
     }
 
-
+    public void datumIdClick(ActionEvent actionEvent){
+        localDate = datumId.getValue();
+    }
 
 }
