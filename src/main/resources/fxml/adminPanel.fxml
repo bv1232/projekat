@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="733.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="733.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="ba.unsa.etf.rpr.Controllers.AdminPanelController">
   <tabs>
     <Tab fx:id="letoviTabId" text="Letovi">
       <content>
@@ -112,7 +112,7 @@
                         </VBox>
                         <HBox GridPane.rowIndex="2" GridPane.rowSpan="2">
                            <children>
-                              <Button fx:id="addButtonId" mnemonicParsing="false" text="Add" onAction="#addButtinClick">
+                              <Button fx:id="addButtonId" mnemonicParsing="false" text="Add" onAction="#addButtonClick">
                                  <HBox.margin>
                                     <Insets bottom="20.0" left="20.0" right="30.0" top="20.0" />
                                  </HBox.margin>
