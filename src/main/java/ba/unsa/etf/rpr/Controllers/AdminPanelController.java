@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.Controllers;
 
 import ba.unsa.etf.rpr.Domain.Let;
+import ba.unsa.etf.rpr.Domain.Putnik;
 import ba.unsa.etf.rpr.Exception.KartaException;
 import ba.unsa.etf.rpr.business.LetManager;
 import javafx.collections.FXCollections;
@@ -35,13 +36,13 @@ public class AdminPanelController {
     public Tab putniciTabId;
     public Tab letoviTabId;
     public TableColumn<Let, Integer> idColId;
-    public TableView putniciTableId;
-    public TableColumn imeColId;
-    public TableColumn prezimeColID;
-    public TableColumn mailColId;
-    public TableColumn usernameColId;
-    public TableColumn passwordColId;
-    public TableColumn idPutnikColId;
+    public TableView<Putnik> putniciTableId;
+    public TableColumn<Putnik, String> imeColId;
+    public TableColumn<Putnik, String> prezimeColID;
+    public TableColumn<Putnik, String> mailColId;
+    public TableColumn<Putnik, String> usernameColId;
+    public TableColumn<Putnik, String> passwordColId;
+    public TableColumn<Putnik, Integer> idPutnikColId;
     public TextField imeId;
     public TextField prezimeId;
     public TextField mailID;
@@ -139,5 +140,9 @@ public class AdminPanelController {
         ObservableList<Let> letoviObs = FXCollections.observableArrayList(letovi);
         letoviTableId.setItems(letoviObs);
         letoviTableId.refresh();
+    }
+
+    public void addPutnikButtonClick(){
+
     }
 }
