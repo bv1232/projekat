@@ -104,7 +104,8 @@ public class AdminPanelController {
     }
 
     public void deleteButtonClick() throws KartaException {
-        letManager.delete(letManager.getByKrajnjaDestinacija(krajnjaId.getText()).getId());
+        letManager.delete(letManager.getById(id).getId());
+        updateTableLetovi();
     }
 
     public void datumIdClick() {
