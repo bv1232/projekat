@@ -87,6 +87,7 @@ public class AdminPanelController {
         let.setVrijemePolaska(Time.valueOf(vrijemeId.getText()));
         let.setTerminal(terminalId.getText());
         letManager.update(let);
+        updateTableLetovi();
     }
 
     public void getLet(){
