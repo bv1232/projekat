@@ -172,8 +172,15 @@ public class AdminPanelController {
         }
     }
 
-    public void updatePutnikButtonClick(){
-
+    public void updatePutnikButtonClick() throws KartaException {
+        Putnik putnik = new Putnik();
+        putnik.setId(putnikId);
+        putnik.setIme(imeId.getText());
+        putnik.setPrezime(prezimeId.getText());
+        putnik.setMail(mailId.getText());
+        putnik.setUsername(usernameId.getText());
+        putnik.setPassword(passwordId.getText());
+        putnikManager.update(putnik);
     }
 
     public void getPutnik(){
