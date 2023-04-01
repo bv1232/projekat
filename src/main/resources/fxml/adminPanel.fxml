@@ -159,7 +159,7 @@
                         <RowConstraints maxHeight="30.399999999999977" minHeight="10.0" prefHeight="30.399999999999977" />
                      </rowConstraints>
                      <children>
-                        <TableView fx:id="letoviTableId1" onMouseClicked="#getLet" GridPane.rowSpan="2">
+                        <TableView fx:id="putniciTableId" onMouseClicked="#getLet" GridPane.rowSpan="2">
                            <columns>
                               <TableColumn fx:id="imeColId" prefWidth="75.0" text="Ime" />
                               <TableColumn fx:id="prezimeColID" prefWidth="108.79998779296875" text="Prezime" />
@@ -250,7 +250,7 @@
                                     <Insets bottom="20.0" left="20.0" right="30.0" top="20.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="deleteButtonId1" mnemonicParsing="false" text="Delete">
+                              <Button fx:id="deletePutnikButtonId" mnemonicParsing="false" text="Delete">
                                  <HBox.margin>
                                     <Insets bottom="20.0" left="20.0" right="30.0" top="20.0" />
                                  </HBox.margin>
