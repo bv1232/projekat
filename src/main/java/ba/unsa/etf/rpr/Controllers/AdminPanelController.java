@@ -109,11 +109,11 @@ public class AdminPanelController {
 
     public void updateTableLetovi() throws KartaException {
         idColId.setCellValueFactory(new PropertyValueFactory<Let, Integer>("id"));
-        polazisteColId.setCellValueFactory(new PropertyValueFactory<Let, String>("Polazište"));
-        krajnjaColId.setCellValueFactory(new PropertyValueFactory<Let, String>("Krajnja destinacija"));
-        datumColId.setCellValueFactory(new PropertyValueFactory<Let, Date>("Datum polaska"));
-        vrijemeColId.setCellValueFactory(new PropertyValueFactory<Let, Time>("Vrijeme polaska"));
-        terminalColId.setCellValueFactory(new PropertyValueFactory<Let, String>("Terminal"));
+        polazisteColId.setCellValueFactory(new PropertyValueFactory<Let, String>("pocetnaDestinacija"));
+        krajnjaColId.setCellValueFactory(new PropertyValueFactory<Let, String>("krajnjaDestinacija"));
+        datumColId.setCellValueFactory(new PropertyValueFactory<Let, Date>("datum"));
+        vrijemeColId.setCellValueFactory(new PropertyValueFactory<Let, Time>("vrijemePolaska"));
+        terminalColId.setCellValueFactory(new PropertyValueFactory<Let, String>("terminal"));
         List<Let> letovi = letManager.getAll();
         ObservableList<Let> letoviObs = FXCollections.observableArrayList(letovi);
         letoviTableId.setItems(letoviObs);
