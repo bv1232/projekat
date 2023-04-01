@@ -159,7 +159,7 @@
                         <RowConstraints maxHeight="30.399999999999977" minHeight="10.0" prefHeight="30.399999999999977" />
                      </rowConstraints>
                      <children>
-                        <TableView fx:id="putniciTableId" onMouseClicked="#getLet" GridPane.rowSpan="2">
+                        <TableView fx:id="putniciTableId" onMouseClicked="#getPutnik" GridPane.rowSpan="2">
                            <columns>
                               <TableColumn fx:id="imeColId" prefWidth="75.0" text="Ime" />
                               <TableColumn fx:id="prezimeColId" prefWidth="108.79998779296875" text="Prezime" />
