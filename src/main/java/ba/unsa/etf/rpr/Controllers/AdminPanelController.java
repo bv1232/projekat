@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Domain.Putnik;
 import ba.unsa.etf.rpr.Exception.KartaException;
 import ba.unsa.etf.rpr.business.LetManager;
+import ba.unsa.etf.rpr.business.PutnikManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -56,6 +57,7 @@ public class AdminPanelController {
     private LetManager letManager = new LetManager();
     private LocalDate localDate;
     private Integer id;
+    private PutnikManager putnikManager = new PutnikManager();
 
     @FXML
     public void initialize() throws KartaException {
@@ -142,7 +144,13 @@ public class AdminPanelController {
         letoviTableId.refresh();
     }
 
-    public void addPutnikButtonClick(){
-
+    public void addPutnikButtonClick() throws KartaException {
+            Putnik putnik = new Putnik();
+            putnik.setUsername(usernameId.getText());
+            putnik.setPassword(passwordID.getText());
+            putnik.setMail(mailID.getText());
+            putnik.setIme(imeId.getText());
+            putnik.setPrezime(prezimeId.getText());
+            putnikManager.add(putnik);
     }
 }
