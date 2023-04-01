@@ -103,5 +103,7 @@ public class AdminPanelController {
         localDate = datumId.getValue();
     }
 
+    public void updateTableLetovi(){
 
+    }
 }
