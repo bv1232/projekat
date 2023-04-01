@@ -53,7 +53,7 @@ public class AdminPanelController {
            let.setPocetnaDestinacija(polazisteId.getText());
            let.setKrajnjaDestinacija(krajnjaId.getText());
            let.setDatum(Date.valueOf(datumId.getValue()));
-           let.setVrijemePolaska(Time.valueOf(vrijemeId.getText()));
+           let.setVrijemePolaska(Time.valueOf(vrijemeId.getText() +":00"));
            let.setTerminal(terminalId.getText());
            letManager.add(let);
        }catch(KartaException e){
