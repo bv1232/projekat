@@ -31,6 +31,7 @@ public class AdminPanelController {
     public Button logOutButtonId;
     public Tab putniciTabId;
     public Tab letoviTabId;
+    public TableColumn idColId;
 
     private LetManager letManager = new LetManager();
     private LocalDate localDate;
@@ -101,5 +102,6 @@ public class AdminPanelController {
     public void datumIdClick() {
         localDate = datumId.getValue();
     }
+
 
 }
