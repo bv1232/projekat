@@ -58,6 +58,7 @@ public class AdminPanelController {
     private LocalDate localDate;
     private Integer id;
     private PutnikManager putnikManager = new PutnikManager();
+    private Integer putnikId;
 
     @FXML
     public void initialize() throws KartaException {
@@ -169,5 +170,9 @@ public class AdminPanelController {
             alert.setContentText("Unesite tačne podatke");
             alert.showAndWait();
         }
+    }
+
+    public void updatePutnikButtonClick(){
+
     }
 }
