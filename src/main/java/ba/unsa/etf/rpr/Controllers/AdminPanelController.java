@@ -40,8 +40,8 @@ public class AdminPanelController {
     private LocalDate localDate;
 
     @FXML
-    public void initialize(){
-
+    public void initialize() throws KartaException {
+        updateTableLetovi();
     }
 
     public void addButtonClick() throws KartaException {
