@@ -175,4 +175,8 @@ public class AdminPanelController {
     public void updatePutnikButtonClick(){
 
     }
+
+    public void getPutnik(){
+
+    }
 }
