@@ -17,12 +17,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class AdminPanelController {
-    public TableView letoviTableId;
-    public TableColumn polazisteColId;
-    public TableColumn krajnjaColId;
-    public TableColumn datumColId;
-    public TableColumn vrijemeColId;
-    public TableColumn terminalColId;
+    public TableView<Let> letoviTableId;
+    public TableColumn<Let, String> polazisteColId;
+    public TableColumn<Let, String> krajnjaColId;
+    public TableColumn<Let, Date> datumColId;
+    public TableColumn<Let, Time> vrijemeColId;
+    public TableColumn<Let, String> terminalColId;
     public TextField polazisteId;
     public TextField krajnjaId;
     public DatePicker datumId;
@@ -34,7 +34,7 @@ public class AdminPanelController {
     public Button logOutButtonId;
     public Tab putniciTabId;
     public Tab letoviTabId;
-    public TableColumn idColId;
+    public TableColumn<Let, Integer> idColId;
 
     private LetManager letManager = new LetManager();
     private LocalDate localDate;
@@ -60,6 +60,7 @@ public class AdminPanelController {
            let.setVrijemePolaska(Time.valueOf(vrijemeId.getText() +":00"));
            let.setTerminal(terminalId.getText());
            letManager.add(let);
+           updateTableLetovi();
        }catch(KartaException e){
            throw new KartaException(e.getMessage(), e);
        }catch(NumberFormatException e){
@@ -107,12 +108,12 @@ public class AdminPanelController {
     }
 
     public void updateTableLetovi() throws KartaException {
-        idColId.setCellFactory(new PropertyValueFactory<Let, Integer>("id"));
-        polazisteColId.setCellFactory(new PropertyValueFactory<Let, String>("Polaziste"));
-        krajnjaColId.setCellFactory(new PropertyValueFactory<Let, String>("Krajnja destinacija"));
-        datumColId.setCellFactory(new PropertyValueFactory<Let, Date>("Datum polaska"));
-        vrijemeColId.setCellFactory(new PropertyValueFactory<Let, Time>("Vrijeme polaska"));
-        terminalColId.setCellFactory(new PropertyValueFactory<Let, String>("Terminal"));
+        idColId.setCellValueFactory(new PropertyValueFactory<Let, Integer>("id"));
+        polazisteColId.setCellValueFactory(new PropertyValueFactory<Let, String>("Polazište"));
+        krajnjaColId.setCellValueFactory(new PropertyValueFactory<Let, String>("Krajnja destinacija"));
+        datumColId.setCellValueFactory(new PropertyValueFactory<Let, Date>("Datum polaska"));
+        vrijemeColId.setCellValueFactory(new PropertyValueFactory<Let, Time>("Vrijeme polaska"));
+        terminalColId.setCellValueFactory(new PropertyValueFactory<Let, String>("Terminal"));
         List<Let> letovi = letManager.getAll();
         ObservableList<Let> letoviObs = FXCollections.observableArrayList(letovi);
         letoviTableId.setItems(letoviObs);
