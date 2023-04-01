@@ -35,6 +35,22 @@ public class AdminPanelController {
     public Tab putniciTabId;
     public Tab letoviTabId;
     public TableColumn<Let, Integer> idColId;
+    public TableView putniciTableId;
+    public TableColumn imeColId;
+    public TableColumn prezimeColID;
+    public TableColumn mailColId;
+    public TableColumn usernameColId;
+    public TableColumn passwordColId;
+    public TableColumn idPutnikColId;
+    public TextField imeId;
+    public TextField prezimeId;
+    public TextField mailID;
+    public TextField usernameId;
+    public TextField passwordID;
+    public Button addPutnikButtonId;
+    public Button updatePutnikButtonId;
+    public Button deletePutnikButtonId;
+    public Button logOutButtonId1;
 
     private LetManager letManager = new LetManager();
     private LocalDate localDate;
