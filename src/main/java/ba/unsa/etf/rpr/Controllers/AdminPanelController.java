@@ -9,6 +9,7 @@ import javafx.util.Callback;
 
 import java.awt.event.ActionEvent;
 import java.sql.Date;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class AdminPanelController {
            let.setPocetnaDestinacija(polazisteId.getText());
            let.setKrajnjaDestinacija(krajnjaId.getText());
            let.setDatum(Date.valueOf(datumId.getValue()));
-           let.setVrijemePolaska(Date.valueOf(vrijemeId.getText()));
+           let.setVrijemePolaska(Time.valueOf(vrijemeId.getText()));
            let.setTerminal(terminalId.getText());
            letManager.add(let);
        }catch(KartaException e){
@@ -78,7 +79,7 @@ public class AdminPanelController {
         let.setPocetnaDestinacija(polazisteId.getText());
         let.setKrajnjaDestinacija(krajnjaId.getText());
         let.setDatum(Date.valueOf(datumId.getValue()));
-        let.setVrijemePolaska(Date.valueOf(vrijemeId.getText()));
+        let.setVrijemePolaska(Time.valueOf(vrijemeId.getText()));
         let.setTerminal(terminalId.getText());
         letManager.update(let);
     }
@@ -97,7 +98,7 @@ public class AdminPanelController {
         letManager.delete(letManager.getByKrajnjaDestinacija(krajnjaId.getText()).getId());
     }
 
-    public void datumIdClick(ActionEvent actionEvent){
+    public void datumIdClick() {
         localDate = datumId.getValue();
     }
 
