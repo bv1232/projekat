@@ -31,6 +31,7 @@ public class AdminPanelController {
     public Tab letoviTabId;
 
     private LetManager letManager = new LetManager();
+    private LocalDate localDate;
 
     @FXML
     public void initialize(){
@@ -94,6 +95,7 @@ public class AdminPanelController {
     public void deleteButtonClick() throws KartaException {
         letManager.delete(letManager.getByKrajnjaDestinacija(krajnjaId.getText()).getId());
     }
+
 
 
 }
