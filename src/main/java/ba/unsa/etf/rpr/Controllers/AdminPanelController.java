@@ -200,4 +200,8 @@ public class AdminPanelController {
         passwordId.setText(passwordColId.getCellData(i).toString());
         putnikId = Integer.valueOf(idPutnikColId.getCellData(i).toString());
     }
+
+    public void updateTablePutnici(){
+
+    }
 }
