@@ -38,6 +38,7 @@ public class AdminPanelController {
 
     private LetManager letManager = new LetManager();
     private LocalDate localDate;
+    private Integer id;
 
     @FXML
     public void initialize() throws KartaException {
@@ -81,10 +82,11 @@ public class AdminPanelController {
             alert.showAndWait();
         }
         Let let = new Let();
+        let.setId(id);
         let.setPocetnaDestinacija(polazisteId.getText());
         let.setKrajnjaDestinacija(krajnjaId.getText());
         let.setDatum(Date.valueOf(datumId.getValue()));
-        let.setVrijemePolaska(Time.valueOf(vrijemeId.getText()));
+        let.setVrijemePolaska(Time.valueOf(vrijemeId.getText() + ":00"));
         let.setTerminal(terminalId.getText());
         letManager.update(let);
         updateTableLetovi();
@@ -98,6 +100,7 @@ public class AdminPanelController {
        datumId.setValue(LocalDate.parse(datumColId.getCellData(i).toString()));
        vrijemeId.setText(vrijemeColId.getCellData(i).toString());
        terminalId.setText(terminalColId.getCellData(i).toString());
+       id = Integer.valueOf(idColId.getCellData(i).toString());
     }
 
     public void deleteButtonClick() throws KartaException {
