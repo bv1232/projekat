@@ -4,9 +4,8 @@ import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 
 import java.sql.*;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
+import java.util.Date;
 
 public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
 
@@ -50,5 +49,22 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
         }catch (KartaException e){
             throw new KartaException(e.getMessage(),e);
         }
+    }
+
+    @Override
+    public List<Integer> getAllByDatum(Date date) throws KartaException {
+        String query = "SELECT * FROM letovi WHERE datum = ?";
+        List<Integer> letovi = new ArrayList<Integer>();
+        try {
+            PreparedStatement stmt = this.getConnection().prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                letovi.add(rs.getInt("id"));
+            }
+            rs.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return letovi;
     }
 }
