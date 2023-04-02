@@ -30,6 +30,7 @@ public class KorisnikPanelController {
     public TableColumn<Let, String> polazakColId;
     public TableColumn<Let, String> krajnjaColId;
     public TableColumn<Let, Time> vrijemeColId;
+    public TableColumn<Let, Integer> idColId;
     public Button cancelButtonId;
     public Button okButtonId;
     private List<Integer> listaDatumi;
@@ -42,6 +43,7 @@ public class KorisnikPanelController {
     @FXML
     public void initialize(){
         this.usernameLabelId.setText(username);
+        idColId.setVisible(false);
     }
 
     public void datePickerSelection() throws KartaException {
@@ -52,6 +54,7 @@ public class KorisnikPanelController {
             polazakColId.setCellValueFactory(new PropertyValueFactory<Let, String>("pocetnaDestinacija"));
             krajnjaColId.setCellValueFactory(new PropertyValueFactory<Let, String>("krajnjaDestinacija"));
             vrijemeColId.setCellValueFactory(new PropertyValueFactory<Let, Time>("vrijemePolaska"));
+            idColId.setCellValueFactory(new PropertyValueFactory<Let, Integer>("id"));
             ObservableList<Let> letoviObs = FXCollections.observableArrayList(letovi);
             letoviTableId.setItems(letoviObs);
             letoviTableId.refresh();

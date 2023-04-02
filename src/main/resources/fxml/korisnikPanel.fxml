@@ -100,11 +100,12 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TableView fx:id="letoviTableId">
+            <TableView fx:id="letoviTableId" prefHeight="255.0" prefWidth="351.0">
               <columns>
                 <TableColumn fx:id="polazakColId" prefWidth="71.19998013973236" text="Polazak" />
                 <TableColumn fx:id="krajnjaColId" prefWidth="120.79996490478516" text="Krajnja destinacija" />
-                  <TableColumn fx:id="vrijemeColId" prefWidth="135.19998168945312" text="Vrijeme polaska" />
+                  <TableColumn fx:id="vrijemeColId" prefWidth="135.20001220703125" text="Vrijeme polaska" />
+                  <TableColumn fx:id="idColId" prefWidth="76.0" />
               </columns>
             </TableView>
          </children>
