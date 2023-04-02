@@ -24,4 +24,5 @@ public class KorisnikPanelController {
     public void initialize(){
         this.usernameLabelId.setText(username);
     }
+
 }
