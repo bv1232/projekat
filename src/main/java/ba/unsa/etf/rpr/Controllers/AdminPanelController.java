@@ -218,7 +218,8 @@ public class AdminPanelController {
         putniciTableId.refresh();
     }
 
-    public void deletePutnikButtonClick(){
-
+    public void deletePutnikButtonClick() throws KartaException {
+        putnikManager.delete(putnikManager.getById(putnikId).getId());
+        updateTablePutnici();
     }
 }
