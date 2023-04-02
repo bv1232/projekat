@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.awt.event.ActionEvent;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDate;
@@ -38,6 +39,7 @@ public class KorisnikPanelController {
     private LocalDate date;
     private LetManager letManager = new LetManager();
     private String username;
+    private Integer id;
     public KorisnikPanelController(String username){
         this.username = username;
     }
@@ -68,12 +70,30 @@ public class KorisnikPanelController {
     }
 
     public void getLet(){
-
+        int i = letoviTableId.getSelectionModel().getSelectedIndex();
+        if (i <= -1) return;
+        id = Integer.valueOf(idColId.getCellData(i).toString());
     }
 
-    public void getKlasa(){
-        if(prvaKlasaId.isSelected()) selectedKlasaId.setText("Prva klasa");
-        if(biznisKlasaId.isSelected()) selectedKlasaId.setText("Biznis klasa");
-        if(ekonomskaKlasaId.isSelected()) selectedKlasaId.setText("Ekonomska klasa");
+    public void getKlasa1(){
+        if(prvaKlasaId.isSelected()){
+            selectedKlasaId.setText("Prva klasa");
+            biznisKlasaId.setSelected(false);
+            ekonomskaKlasaId.setSelected(false);
+        }
+    }
+    public void getKlasa2(){
+        if(biznisKlasaId.isSelected()) {
+            selectedKlasaId.setText("Biznis klasa");
+            prvaKlasaId.setSelected(false);
+            ekonomskaKlasaId.setSelected(false);
+        }
+    }
+    public void getKlasa3(){
+        if(ekonomskaKlasaId.isSelected()){
+            selectedKlasaId.setText("Ekonomska klasa");
+            prvaKlasaId.setSelected(false);
+            biznisKlasaId.setSelected(false);
+        }
     }
 }
