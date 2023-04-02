@@ -20,6 +20,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import static java.sql.Date.valueOf;
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
@@ -119,7 +120,26 @@ public class KorisnikPanelController {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
-    public void cancelButtonClick(){
+    public void cancelButtonClick() throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Upozorenje!");
+        alert.setHeaderText("Da li ste sigurni da želite nastaviti?");
+        alert.setContentText("Pritisnite OK za potvrdu.");
 
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType button = result.orElse(ButtonType.CANCEL);
+
+        if (button == ButtonType.OK) {
+            Stage primaryStage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            primaryStage.setTitle("Login");
+            primaryStage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE,USE_COMPUTED_SIZE));
+            primaryStage.setResizable(false);
+            primaryStage.show();
+            Stage stage = (Stage) cancelButtonId.getScene().getWindow();
+            stage.close();
+
+        } else
+            return;
     }
 }
