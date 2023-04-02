@@ -111,7 +111,7 @@ public class KorisnikPanelController {
         karta.setPutnik(putnikManager.getById(putnikManager.logInId(username,password)));
         karta.setKlasa(selectedKlasaId.getText());
         kartaManager.add(karta);
-        KartaController controller = new KartaController(id, putnikManager.logInId(username, password));
+        KartaController controller = new KartaController(id, putnikManager.logInId(username, password), selectedKlasaId.getText());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/karta.fxml"));
         Stage primaryStage = new Stage();
         loader.setController(controller);
