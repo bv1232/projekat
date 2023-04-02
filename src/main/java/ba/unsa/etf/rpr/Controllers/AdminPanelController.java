@@ -63,6 +63,7 @@ public class AdminPanelController {
     @FXML
     public void initialize() throws KartaException {
         updateTableLetovi();
+        updateTablePutnici();
     }
 
     public void addButtonClick() throws KartaException {
@@ -161,6 +162,7 @@ public class AdminPanelController {
             putnik.setIme(imeId.getText());
             putnik.setPrezime(prezimeId.getText());
             putnikManager.add(putnik);
+            updateTablePutnici();
         }catch(KartaException e){
             throw new KartaException(e.getMessage(), e);
         }catch(NumberFormatException e){
@@ -188,6 +190,7 @@ public class AdminPanelController {
         putnik.setUsername(usernameId.getText());
         putnik.setPassword(passwordId.getText());
         putnikManager.update(putnik);
+        updateTablePutnici();
     }
 
     public void getPutnik(){
