@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.Dao.DaoFactory;
 import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 
+import java.util.Date;
 import java.util.List;
 
 public class LetManager {
@@ -34,5 +35,8 @@ public class LetManager {
     }
     public Let getByKrajnjaDestinacija(String krajnja) throws KartaException{
         return DaoFactory.letoviDao().getByKrajnjaDestinacija(krajnja);
+    }
+    public List<Integer> getAllbyDatum(Date date) throws KartaException{
+        return DaoFactory.letoviDao().getAllByDatum(date);
     }
 }
