@@ -8,15 +8,23 @@ import ba.unsa.etf.rpr.business.PutnikManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
+
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class AdminPanelController {
     public TableView<Let> letoviTableId;
@@ -221,5 +229,28 @@ public class AdminPanelController {
     public void deletePutnikButtonClick() throws KartaException {
         putnikManager.delete(putnikManager.getById(putnikId).getId());
         updateTablePutnici();
+    }
+
+    public void logOutButtonClick() throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Upozorenje!");
+        alert.setHeaderText("Da li ste sigurni da želite nastaviti?");
+        alert.setContentText("Pritisnite OK za potvrdu.");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType button = result.orElse(ButtonType.CANCEL);
+
+        if (button == ButtonType.OK) {
+            Stage primaryStage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            primaryStage.setTitle("Login");
+            primaryStage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE,USE_COMPUTED_SIZE));
+            primaryStage.setResizable(false);
+            primaryStage.show();
+            Stage stage = (Stage) logOutButtonId1.getScene().getWindow();
+            stage.close();
+
+        } else
+            return;
     }
 }

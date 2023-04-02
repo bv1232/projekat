@@ -132,7 +132,7 @@
                         </HBox>
                         <ButtonBar GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
                           <buttons>
-                            <Button fx:id="logOutButtonId" mnemonicParsing="false" text="Log out" />
+                            <Button fx:id="logOutButtonId" mnemonicParsing="false" text="Log out" onAction="#logOutButtonClick"/>
                           </buttons>
                            <GridPane.margin>
                               <Insets right="15.0" />
@@ -260,7 +260,7 @@
                         </HBox>
                         <ButtonBar GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
                            <buttons>
-                              <Button fx:id="logOutButtonId1" mnemonicParsing="false" text="Log out" />
+                              <Button fx:id="logOutButtonId1" mnemonicParsing="false" text="Log out" onAction="#logOutButtonClick"/>
                            </buttons>
                            <GridPane.margin>
                               <Insets right="15.0" />
