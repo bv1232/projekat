@@ -217,4 +217,8 @@ public class AdminPanelController {
         putniciTableId.setItems(putniciObs);
         putniciTableId.refresh();
     }
+
+    public void deletePutnikButtonClick(){
+
+    }
 }
