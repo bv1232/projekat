@@ -96,4 +96,8 @@ public class KorisnikPanelController {
             biznisKlasaId.setSelected(false);
         }
     }
+
+    public void okButtonIdClick(){
+
+    }
 }
