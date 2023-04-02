@@ -50,12 +50,18 @@ public class KorisnikPanelController {
         date = datePickerId.getValue();
         listaDatumi = letManager.getAllbyDatum(Date.valueOf(datePickerId.getValue()));
         List<Let> letovi = letManager.getAllById(listaDatumi);
-        polazakColId.setCellValueFactory(new PropertyValueFactory<Let, String>("pocetnaDestinacija"));
-        krajnjaColId.setCellValueFactory(new PropertyValueFactory<Let, String>("krajnjaDestinacija"));
-        vrijemeColId.setCellValueFactory(new PropertyValueFactory<Let, Time>("vrijemePolaska"));
-        ObservableList<Let>  letoviObs = FXCollections.observableArrayList(letovi);
-        letoviTableId.setItems(letoviObs);
-        letoviTableId.refresh();
+        if(!letovi.isEmpty()) {
+            polazakColId.setCellValueFactory(new PropertyValueFactory<Let, String>("pocetnaDestinacija"));
+            krajnjaColId.setCellValueFactory(new PropertyValueFactory<Let, String>("krajnjaDestinacija"));
+            vrijemeColId.setCellValueFactory(new PropertyValueFactory<Let, Time>("vrijemePolaska"));
+            ObservableList<Let> letoviObs = FXCollections.observableArrayList(letovi);
+            letoviTableId.setItems(letoviObs);
+            letoviTableId.refresh();
+        }else{
+            ObservableList<Let> l = letoviTableId.getItems();
+            l.clear();
+            letoviTableId.refresh();
+        }
     }
 
     public void getLet(){

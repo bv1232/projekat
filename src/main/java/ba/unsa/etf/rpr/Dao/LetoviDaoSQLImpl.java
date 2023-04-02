@@ -72,14 +72,25 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
 
     @Override
     public List<Let> getAllById(List<Integer> ids) throws KartaException {
-        String query = "SELECT * FROM letovi WHERE id = ?";
+        if(ids.isEmpty()) return new ArrayList<Let>();
+        String query = "SELECT * FROM letovi WHERE id IN (" + String.join(",", Collections.nCopies(ids.size(), "?")) + ")";
         List<Let> letovi = new ArrayList<>();
         try {
+            System.out.println(query);
+
             PreparedStatement stmt = this.getConnection().prepareStatement(query);
-            for (int i = 0; i< ids.size(); i++) stmt.setInt(i+1, ids.get(i));
+            for (int i = 0; i < ids.size(); i++) {
+                stmt.setInt(i+1, ids.get(i));
+            }
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 Let let = new Let();
+                let.setId(rs.getInt("id"));
+                let.setDatum(rs.getDate("datum"));
+                let.setVrijemePolaska(rs.getTime("polazak"));
+                let.setPocetnaDestinacija(rs.getString("pocetnaDestinacija"));
+                let.setKrajnjaDestinacija(rs.getString("krajnjaDestinacija"));
+                let.setTerminal(rs.getString("terminal"));
                 letovi.add(let);
             }
             rs.close();
