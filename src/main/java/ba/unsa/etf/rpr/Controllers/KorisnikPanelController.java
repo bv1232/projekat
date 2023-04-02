@@ -23,7 +23,6 @@ public class KorisnikPanelController {
     public DatePicker datePickerId;
     public Label usernameLabelId;
     public TextField brKartiId;
-
     public RadioButton prvaKlasaId;
     public RadioButton biznisKlasaId;
     public RadioButton ekonomskaKlasaId;
@@ -33,7 +32,6 @@ public class KorisnikPanelController {
     public TableColumn<Let, Time> vrijemeColId;
     public Button cancelButtonId;
     public Button okButtonId;
-
     private List<Integer> listaDatumi;
     private LocalDate date;
     private LetManager letManager = new LetManager();
