@@ -201,7 +201,17 @@ public class AdminPanelController {
         putnikId = Integer.valueOf(idPutnikColId.getCellData(i).toString());
     }
 
-    public void updateTablePutnici(){
-
+    public void updateTablePutnici() throws KartaException {
+        idPutnikColId.setCellValueFactory(new PropertyValueFactory<Putnik, Integer>("id"));
+        imeColId.setCellValueFactory(new PropertyValueFactory<Putnik, String>("ime"));
+        prezimeColId.setCellValueFactory(new PropertyValueFactory<Putnik, String>("prezime"));
+        mailColId.setCellValueFactory(new PropertyValueFactory<Putnik, String>("mail"));
+        usernameColId.setCellValueFactory(new PropertyValueFactory<Putnik, String>("username"));
+        passwordColId.setCellValueFactory(new PropertyValueFactory<Putnik, String>("password"));
+        List<Putnik> putnici = putnikManager.getAll();
+        ObservableList<Putnik> putniciObs = FXCollections.observableArrayList(putnici);
+        putniciTableId.setItems(putniciObs);
+        putniciTableId.setItems(putniciObs);
+        putniciTableId.refresh();
     }
 }
