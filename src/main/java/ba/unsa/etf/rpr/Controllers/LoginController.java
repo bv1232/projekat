@@ -60,7 +60,7 @@ public class LoginController {
                 stage.close();
             }else {
                 Putnik putnik = putnikManager.getById(logInId);
-                KorisnikPanelController controller = new KorisnikPanelController(usernameId.getText());
+                KorisnikPanelController controller = new KorisnikPanelController(usernameId.getText(),passwordId.getText());
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnikPanel.fxml"));
                 Stage primaryStage = new Stage();
                 loader.setController(controller);

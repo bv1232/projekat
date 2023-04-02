@@ -1,20 +1,19 @@
 package ba.unsa.etf.rpr.Controllers;
 
-import ba.unsa.etf.rpr.Dao.DaoFactory;
+import ba.unsa.etf.rpr.Domain.Karta;
 import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 import ba.unsa.etf.rpr.business.LetManager;
+import ba.unsa.etf.rpr.business.PutnikManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.awt.event.ActionEvent;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.sql.Date.valueOf;
@@ -38,10 +37,12 @@ public class KorisnikPanelController {
     private List<Integer> listaDatumi;
     private LocalDate date;
     private LetManager letManager = new LetManager();
-    private String username;
+    private PutnikManager putnikManager = new PutnikManager();
+    private String username,password;
     private Integer id;
-    public KorisnikPanelController(String username){
+    public KorisnikPanelController(String username, String password){
         this.username = username;
+        this.password = password;
     }
     @FXML
     public void initialize(){
@@ -97,7 +98,10 @@ public class KorisnikPanelController {
         }
     }
 
-    public void okButtonIdClick(){
-
+    public void okButtonIdClick() throws KartaException {
+        Karta karta = new Karta();
+        karta.setLet(letManager.getById(id));
+        karta.setPutnik(putnikManager.getById(putnikManager.logInId(username,password)));
+        karta.setKlasa(selectedKlasaId.getText());
     }
 }

@@ -20,7 +20,6 @@ public class KarteDaoSQLImpl extends AbstractDao<Karta> implements KarteDao{
             karta.setLet(DaoFactory.letoviDao().getById(rs.getInt("idLeta")));
             karta.setKlasa(rs.getString("klasa"));
             karta.setPutnik(DaoFactory.putniciDao().getById(rs.getInt("idPutnika")));
-            karta.setSjediste(rs.getString("sjediste"));
             return karta;
         } catch (Exception e) {
             throw new KartaException(e.getMessage(), e);
@@ -33,7 +32,6 @@ public class KarteDaoSQLImpl extends AbstractDao<Karta> implements KarteDao{
         row.put("idLeta", object.getLet().getId());
         row.put("klasa", object.getKlasa());
         row.put("idPutnika", object.getPutnik().getId());
-        row.put("sjediste", object.getSjediste());
         return row;
     }
 

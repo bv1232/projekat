@@ -6,7 +6,6 @@ public class Karta implements Idable{
  private int id;
  private Let let;
  private Putnik putnik;
- private String sjediste;
  private String klasa;
 
     public void setId(int id) {
@@ -19,10 +18,6 @@ public class Karta implements Idable{
 
     public void setPutnik(Putnik putnik) {
         this.putnik = putnik;
-    }
-
-    public void setSjediste(String sjediste) {
-        this.sjediste = sjediste;
     }
 
     public void setKlasa(String klasa) {
@@ -41,19 +36,14 @@ public class Karta implements Idable{
         return putnik;
     }
 
-    public String getSjediste() {
-        return sjediste;
-    }
-
     public String getKlasa() {
         return klasa;
     }
 
-    public Karta(int id, Let let, Putnik putnik, String sjediste, String klasa) {
+    public Karta(int id, Let let, Putnik putnik, String klasa) {
         this.id = id;
         this.let = let;
         this.putnik = putnik;
-        this.sjediste = sjediste;
         this.klasa = klasa;
     }
 
@@ -65,12 +55,12 @@ public class Karta implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Karta karta = (Karta) o;
-        return id == karta.id && Objects.equals(let, karta.let) && Objects.equals(putnik, karta.putnik) && Objects.equals(sjediste, karta.sjediste) && Objects.equals(klasa, karta.klasa);
+        return id == karta.id && Objects.equals(let, karta.let) && Objects.equals(putnik, karta.putnik) && Objects.equals(klasa, karta.klasa);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, let, putnik, sjediste, klasa);
+        return Objects.hash(id, let, putnik, klasa);
     }
 
     @Override
@@ -79,7 +69,6 @@ public class Karta implements Idable{
                 "id=" + id +
                 ", let=" + let +
                 ", putnik=" + putnik +
-                ", sjediste='" + sjediste + '\'' +
                 ", klasa='" + klasa + '\'' +
                 '}';
     }
