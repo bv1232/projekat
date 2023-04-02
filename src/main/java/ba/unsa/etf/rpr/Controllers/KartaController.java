@@ -7,4 +7,5 @@ public class KartaController {
         this.idLeta = idLeta;
         this.idPutnika = idPutnika;
     }
+
 }
