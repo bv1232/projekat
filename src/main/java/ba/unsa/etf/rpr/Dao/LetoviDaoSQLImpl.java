@@ -76,8 +76,6 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
         String query = "SELECT * FROM letovi WHERE id IN (" + String.join(",", Collections.nCopies(ids.size(), "?")) + ")";
         List<Let> letovi = new ArrayList<>();
         try {
-            System.out.println(query);
-
             PreparedStatement stmt = this.getConnection().prepareStatement(query);
             for (int i = 0; i < ids.size(); i++) {
                 stmt.setInt(i+1, ids.get(i));

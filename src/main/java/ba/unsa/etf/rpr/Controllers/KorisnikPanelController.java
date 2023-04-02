@@ -119,4 +119,7 @@ public class KorisnikPanelController {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
+    public void cancelButtonClick(){
+
+    }
 }
