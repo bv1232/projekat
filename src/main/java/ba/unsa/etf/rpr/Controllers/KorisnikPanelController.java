@@ -33,6 +33,7 @@ public class KorisnikPanelController {
     public TableColumn<Let, Integer> idColId;
     public Button cancelButtonId;
     public Button okButtonId;
+    public TextField selectedKlasaId;
     private List<Integer> listaDatumi;
     private LocalDate date;
     private LetManager letManager = new LetManager();
@@ -44,6 +45,7 @@ public class KorisnikPanelController {
     public void initialize(){
         this.usernameLabelId.setText(username);
         idColId.setVisible(false);
+        selectedKlasaId.setVisible(false);
     }
 
     public void datePickerSelection() throws KartaException {
@@ -67,5 +69,11 @@ public class KorisnikPanelController {
 
     public void getLet(){
 
+    }
+
+    public void getKlasa(){
+        if(prvaKlasaId.isSelected()) selectedKlasaId.setText("Prva klasa");
+        if(biznisKlasaId.isSelected()) selectedKlasaId.setText("Biznis klasa");
+        if(ekonomskaKlasaId.isSelected()) selectedKlasaId.setText("Ekonomska klasa");
     }
 }
