@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.Dao;
 
+import ba.unsa.etf.rpr.Domain.Karta;
 import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
 
@@ -66,5 +67,24 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
             e.printStackTrace();
         }
         return letovi;
+    }
+
+    @Override
+    public List<Let> getAllById(List<Integer> ids) throws KartaException {
+        String query = "SELECT * FROM letovi WHERE id = ?";
+        List<Let> letovi = new ArrayList<>();
+        try {
+            PreparedStatement stmt = this.getConnection().prepareStatement(query);
+            for (int i = 0; i< ids.size(); i++) stmt.setInt(i+1, ids.get(i));
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                Let let = new Let();
+                letovi.add(let);
+            }
+            rs.close();
+            return letovi;
+        } catch (SQLException e) {
+            throw new KartaException(e.getMessage(), e);
+        }
     }
 }
