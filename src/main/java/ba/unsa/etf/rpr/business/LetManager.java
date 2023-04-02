@@ -38,4 +38,7 @@ public class LetManager {
     public List<Integer> getAllbyDatum(Date date) throws KartaException{
         return DaoFactory.letoviDao().getAllByDatum(date);
     }
+    public List<Let> getAllById(List<Integer> ids) throws KartaException{
+        return DaoFactory.letoviDao().getAllById(ids);
+    }
 }
