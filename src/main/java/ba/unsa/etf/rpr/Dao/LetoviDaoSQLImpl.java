@@ -58,6 +58,7 @@ public class LetoviDaoSQLImpl extends AbstractDao<Let> implements LetoviDao{
         List<Integer> letovi = new ArrayList<Integer>();
         try {
             PreparedStatement stmt = this.getConnection().prepareStatement(query);
+            stmt.setDate(1, (java.sql.Date) date);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 letovi.add(rs.getInt("id"));
