@@ -1,6 +1,5 @@
 package ba.unsa.etf.rpr.business;
 
-import ba.unsa.etf.rpr.Dao.Dao;
 import ba.unsa.etf.rpr.Dao.DaoFactory;
 import ba.unsa.etf.rpr.Domain.Let;
 import ba.unsa.etf.rpr.Exception.KartaException;
