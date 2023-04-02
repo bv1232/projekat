@@ -75,7 +75,6 @@ public class LoginController {
 
     public void otvoriProzorZaRegistraciju(ActionEvent actionEvent) throws IOException {
         RegistracijaController controller = new RegistracijaController(usernameId.getText(), passwordId.getText());
-        //Parent root = FXMLLoader.load(getClass().getResource("/fxml/registracija.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registracija.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Registracija");
