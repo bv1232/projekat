@@ -8,6 +8,7 @@ import java.util.List;
 
 public class PutnikManager {
     public Putnik add(Putnik putnik) throws KartaException {
+        if(doesUsernameExist(putnik.getId())) throw new KartaException("Korisnik već postoji");
         try {
             return DaoFactory.putniciDao().add(putnik);
         } catch (KartaException e) {
